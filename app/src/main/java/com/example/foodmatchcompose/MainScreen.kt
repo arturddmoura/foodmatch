@@ -1,21 +1,19 @@
 package com.example.foodmatchcompose
 
+import LoginScreen
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
-import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.SnackbarDefaults.contentColor
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,7 +21,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import com.example.foodmatchcompose.screens.CartScreen
 import com.example.foodmatchcompose.screens.HomeScreen
-import com.example.foodmatchcompose.screens.ProfileScreen
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -32,6 +29,9 @@ fun MainScreen() {
     var selectedItem = rememberSaveable { mutableIntStateOf(0) }
 
     Scaffold(
+        topBar = {
+            AppHeader(title = "FoodMatch")
+        },
         bottomBar = {
             BottomAppBar {
                 BottomNavigation {
@@ -89,7 +89,7 @@ fun MainScreen() {
             when (selectedItem.value) {
                 0 -> HomeScreen()
                 1 -> CartScreen()
-                2 -> ProfileScreen()
+                2 -> LoginScreen()
             }
         }
     }
