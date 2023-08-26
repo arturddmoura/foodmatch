@@ -34,8 +34,7 @@ fun CartScreen() {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Spacer(modifier = Modifier.height(50.dp))
-
+        Spacer(modifier = Modifier.height(20.dp))
         LazyColumn(
             modifier = Modifier
                 .fillMaxWidth()
@@ -54,7 +53,7 @@ fun CartScreen() {
         ) {
             Text(text = "Fechar pedido")
         }
-        Spacer(modifier = Modifier.height(75.dp))
+        Spacer(modifier = Modifier.height(40.dp))
     }
 }
 

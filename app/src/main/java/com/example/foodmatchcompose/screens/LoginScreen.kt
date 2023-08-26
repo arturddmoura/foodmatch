@@ -8,8 +8,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -17,12 +15,13 @@ fun LoginScreen() {
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
+    Spacer(modifier = Modifier.height(20.dp))
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
         Text(
             text = "Entrar no FoodMatch",
